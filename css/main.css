@@ -18,12 +18,12 @@ body {
 
 .container{
 	max-width: 1200px;
+	width: 90%;
 	margin: 0 auto;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
 }
 
 h1,
@@ -56,27 +56,11 @@ p {
 /*The widths are in a percentage!*/
 header {
 	display: flex;
-	flex-flow: row wrap;
+	flex-flow: column wrap;
 	justify-content: center;
 	align-items: center;
 	height: auto;
-	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
-	width: 100%;
-}
-
-.site-name {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-}
-
-.nav-items {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 }
 
@@ -84,8 +68,10 @@ header h1 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 	margin: 0;
 	padding: 38px 0;
+	border-bottom: 3px solid #77a466;
 }
 header h1 span {
 	color: #77a466;
@@ -169,11 +155,6 @@ nav ul li a{
 	padding: 10px 30px;
 }
 
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-}
-
 .section-two h4,
 .section-three h4 {
 	padding: 10px 30px;
@@ -216,4 +197,52 @@ footer span {
 	text-transform: lowercase;
 	color: #77a466;
 	font-size: 0.875em;
+}
+
+/*Breakpoint for tablets*/
+@media all and (min-width: 768px) {
+.bottom-section {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: stretch;
+}
+.section-one,
+.section-two,
+.section-three {
+	display: flex;
+	flex-direction: column;
+	width: 33%;
+}
+.section-two {
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+}
+
+/*Breakpoint for desktops*/
+@media all and (min-width: 1200px) {
+header {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+nav {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+}
+nav ul {
+	display: flex;
+	width: auto;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+}
+nav ul li {
+	padding: 0 10px;
+}
+header h1 {
+	border-bottom: none;
+	justify-content: flex-start;
+	width: 33.33%;
+}
 }
